@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 
 import User from '../models/User';
+import File from '../models/File';
 
 class UserController {
   async store(req, res) {
@@ -12,6 +13,7 @@ class UserController {
       password: Yup.string()
         .required()
         .min(6),
+      avatar_id: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -22,6 +24,16 @@ class UserController {
 
     if (userExists) {
       return res.status(400).json({ error: 'User already exists' });
+    }
+
+    if (req.body.avatar_id) {
+      const checkAvatar = await File.findOne({
+        where: { id: req.body.avatar_id },
+      });
+
+      if (!checkAvatar) {
+        return res.status(400).json({ error: 'Avatar does not exists' });
+      }
     }
 
     const { id, name, email, provider } = await User.create(req.body);
@@ -49,6 +61,7 @@ class UserController {
       confirmPassword: Yup.string().when('password', (password, field) =>
         password ? field.required().oneOf([Yup.ref('password')]) : field
       ),
+      avatar_id: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -64,6 +77,16 @@ class UserController {
 
       if (userExists) {
         return res.status(400).json({ error: 'User already exists' });
+      }
+    }
+
+    if (req.body.avatar_id) {
+      const checkAvatar = await File.findOne({
+        where: { id: req.body.avatar_id },
+      });
+
+      if (!checkAvatar) {
+        return res.status(400).json({ error: 'Avatar does not exists' });
       }
     }
 
