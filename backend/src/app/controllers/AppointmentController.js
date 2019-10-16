@@ -136,7 +136,7 @@ class AppointmentController {
     
     if (appointment.canceled_at) {
       return res.status(400).json({
-        error: 'This appointment is alraedy canceled',
+        error: 'This appointment is already canceled',
       });
     }
 
