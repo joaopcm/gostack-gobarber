@@ -133,6 +133,12 @@ class AppointmentController {
         error: 'You do not have permission to cancel this appointment',
       });
     }
+    
+    if (appointment.canceled_at) {
+      return res.status(400).json({
+        error: 'This appointment is alraedy canceled',
+      });
+    }
 
     const dateWithSub = subHours(appointment.date, 2);
 
