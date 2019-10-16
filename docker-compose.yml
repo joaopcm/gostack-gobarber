@@ -18,6 +18,14 @@ services:
     volumes:
       - mongo:/data/db
 
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+
 volumes:
   postgres:
   mongo:
+  redis:
