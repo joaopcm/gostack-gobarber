@@ -67,6 +67,13 @@ class AppointmentController {
       return res.status(400).json({ error: 'Past dates are not permitted' });
     }
 
+    // Check if provider is not the client
+    if (req.userId === provider_id) {
+      return res
+        .status(401)
+        .json({ error: 'You can not appoint with yourself' });
+    }
+
     // Check date availability
     const checkAvailability = await Appointment.findOne({
       where: {
