@@ -1,9 +1,9 @@
-import { startOfDay, endOfDay, parseISO } from 'date-fns';
+import { endOfDay, parseISO, startOfDay } from 'date-fns';
 import { Op } from 'sequelize';
-
 import Appointment from '../models/Appointment';
-import User from '../models/User';
 import File from '../models/File';
+import User from '../models/User';
+
 
 class ScheduleController {
   async index(req, res) {
@@ -32,7 +32,7 @@ class ScheduleController {
         {
           model: User,
           as: 'user',
-          attributes: ['id', 'name'],
+          attributes: ['name'],
           include: [
             {
               model: File,
