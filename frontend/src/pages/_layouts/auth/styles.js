@@ -23,15 +23,20 @@ export const Content = styled.div`
 
     input {
       background: rgba(0, 0, 0, 0.1);
-      border: 2px solid rgba(0, 0, 0, 0.1);
+      border: 2px solid rgb(37, 36, 44);
       border-radius: 4px;
-      height: 44px;
+      height: 50px;
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;
+      transition: border .2s;
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);
+      }
+
+      &:focus {
+        border: 2px solid ${colors.primary}
       }
     }
 
@@ -44,7 +49,7 @@ export const Content = styled.div`
 
     button {
       margin: 5px 0 0;
-      height: 44px;
+      height: 50px;
       background: #7159c1;
       font-weight: bold;
       color: #fff;
