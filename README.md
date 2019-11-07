@@ -11,7 +11,7 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-  <a href="https://github.com/jopcmelo/gostack-gympoint/stargazers">
+  <a href="https://github.com/jopcmelo/gostack-gobarber/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/jopcmelo/gostack-gobarber?style=social">
   </a>
 </p>
