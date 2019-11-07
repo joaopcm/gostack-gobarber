@@ -57,6 +57,10 @@ First install front-end dependencies
 ```
 $> cd ./frontend/ && yarn
 ```
+Then run app
+```
+$> yarn start
+```
 
 #### Mobile
 > Mobile version is comming soon...
