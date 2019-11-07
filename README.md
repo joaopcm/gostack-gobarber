@@ -1,7 +1,20 @@
+<h1 align="center">
+  GoBarber
+</h1>
 
-# GoBarber
+<h3 align="center">
+  Rocketseat bootcamp project. The project is a web and mobile system for control and interaction between barbershop providers and their customers. It has features like login, schedules, cancellations, notifications, file uploads, etc.
+</h3>
 
-Rocketseat bootcamp project. The project is a web and mobile system for control and interaction between barbershop providers and their customers. It has features like login, schedules, cancellations, notifications, file uploads, etc.
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/jopcmelo/gostack-gobarber?color=%2304D361">
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
+
+  <a href="https://github.com/jopcmelo/gostack-gympoint/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/jopcmelo/gostack-gobarber?style=social">
+  </a>
+</p>
 
 ## Getting Started
 
