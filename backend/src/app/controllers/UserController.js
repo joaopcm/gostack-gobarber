@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 import File from '../models/File';
 import User from '../models/User';
 
-
 class UserController {
   async store(req, res) {
     const schema = Yup.object().shape({
@@ -96,11 +95,11 @@ class UserController {
 
     await user.update(req.body);
 
-    const { id, name, avatar } = await user.findByPk(req.userId, {
+    const { id, name, avatar } = await User.findByPk(req.userId, {
       include: [
-        {model: File, as: 'avatar', attributes: ['id', 'path', 'url']}
-      ]
-    })
+        { model: File, as: 'avatar', attributes: ['id', 'path', 'url'] },
+      ],
+    });
 
     return res.json({
       id,
