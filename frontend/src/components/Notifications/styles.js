@@ -1,6 +1,7 @@
-import { lighten } from 'polished';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 import styled, { css } from 'styled-components';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { lighten } from 'polished';
+
 import colors from '~/styles/colors';
 
 export const Container = styled.div`

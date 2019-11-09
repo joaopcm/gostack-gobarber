@@ -1,8 +1,8 @@
+import React, { useEffect, useMemo, useState } from 'react';
 import { formatDistance, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import React, { useEffect, useMemo, useState } from 'react';
 import { MdNotifications } from 'react-icons/md';
-import api from '~/services/api';
+
 import colors from '~/styles/colors';
 import {
   Badge,
@@ -12,6 +12,8 @@ import {
   NotificationList,
   Scroll,
 } from './styles';
+
+import api from '~/services/api';
 
 export default function Notifications() {
   const [visible, setVisible] = useState(false);

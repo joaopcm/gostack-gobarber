@@ -5,4 +5,5 @@ export default {
   secondary: '#19181f',
   white: '#fff',
   grey: '#999',
+  error: '#e32929',
 };
