@@ -36,6 +36,7 @@ export const NotificationList = styled.div`
   background: ${colors.secondary};
   border-radius: 4px;
   padding: 15px 5px;
+  display: ${props => (props.visible ? 'block' : 'none')}
 
   &::before {
     content: '';
@@ -65,8 +66,10 @@ export const Notification = styled.div`
   }
 
   time {
+    display: block;
     font-size: 12px;
     opacity: 0.6;
+    margin-bottom: 5px;
   }
 
   button {
@@ -74,9 +77,6 @@ export const Notification = styled.div`
     border: 0;
     background: none;
     color: ${lighten(0.2, colors.primary)};
-    padding: 0 5px;
-    margin: 0 5px;
-    border-left: 1px solid ${colors.dark};
   }
 
   ${props =>
@@ -89,6 +89,7 @@ export const Notification = styled.div`
         height: 8px;
         background: ${colors.success};
         border-radius: 50%;
+        margin-left: 10px;
       }
     `}
 `;
@@ -96,4 +97,17 @@ export const Notification = styled.div`
 export const Scroll = styled(PerfectScrollbar)`
   max-height: 260px;
   padding: 5px 15px;
+`;
+
+export const EmptyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+
+  strong {
+    font-size: 13px;
+    font-weight: bold;
+    color: ${colors.grey};
+  }
 `;
