@@ -3,7 +3,7 @@ import colors from '~/styles/colors';
 
 export const Container = styled.div`
   height: 64px;
-  background: ${colors.header};
+  background: ${colors.secondary};
   padding: 0 30px;
 `;
 
