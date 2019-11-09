@@ -1,5 +1,8 @@
 export default {
   primary: '#7159c1',
   success: '#31DB7D',
-  dark: '#19181F',
+  dark: '#0b0a0d',
+  header: '#19181f',
+  white: '#fff',
+  grey: '#999',
 };

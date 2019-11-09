@@ -8,7 +8,11 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${colors.dark} url(${background}) no-repeat center bottom;
+  background: ${colors.dark} url(${background}) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 `;
 
 export const Content = styled.div`
@@ -29,14 +33,14 @@ export const Content = styled.div`
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;
-      transition: border .2s;
+      transition: border 0.2s;
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);
       }
 
       &:focus {
-        border: 2px solid ${colors.primary}
+        border: 2px solid ${colors.primary};
       }
     }
 
