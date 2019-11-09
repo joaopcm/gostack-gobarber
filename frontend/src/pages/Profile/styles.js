@@ -72,7 +72,7 @@ export const Container = styled.div`
     font-size: 16px;
 
     &:hover {
-      background: ${darken(0.03, colors.primary)};
+      background: ${darken(0.08, colors.error)};
     }
   }
 `;

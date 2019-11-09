@@ -20,7 +20,7 @@ export default function Profile() {
         path: 'dataset.file',
       });
     }
-  }, [ref, registerField]);
+  }, [ref.current]); // eslint-disable-line
 
   async function handleChange(event) {
     const data = new FormData();
