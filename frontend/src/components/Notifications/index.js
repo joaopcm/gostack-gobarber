@@ -72,9 +72,9 @@ export default function Notifications() {
                 {!notification.read && (
                   <button
                     type="button"
-                    onCLick={() => handleMarkAsRead(notification._id)}
+                    onClick={() => handleMarkAsRead(notification._id)}
                   >
-                    Mark as read
+                    Marcar como lido
                   </button>
                 )}
               </Notification>
@@ -82,7 +82,7 @@ export default function Notifications() {
           </Scroll>
         ) : (
           <EmptyContainer>
-            <strong>Looks like the box is empty</strong>
+            <strong>Parece que a caixa está vazia</strong>
           </EmptyContainer>
         )}
       </NotificationList>

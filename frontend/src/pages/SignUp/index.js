@@ -9,13 +9,13 @@ import logo from '~/assets/logo.svg';
 import { signUpRequest } from '~/store/modules/auth/actions';
 
 const schema = Yup.object().shape({
-  name: Yup.string().required('Name is required'),
+  name: Yup.string().required('Nome é obrigatório'),
   email: Yup.string()
-    .email('Insert a valid email address')
-    .required('Email is required'),
+    .email('Insira um endereço de e-mail válido')
+    .required('E-mail é obrigatório'),
   password: Yup.string()
-    .required('Password is required')
-    .min(6, 'Your password must be at least 6 characters'),
+    .required('Senha é obrigatória')
+    .min(6, 'Sua senha precisa ter no mínimo 6 caracteres'),
 });
 
 export default function SignUp() {
@@ -29,15 +29,15 @@ export default function SignUp() {
     <>
       <img src={logo} alt="GoBarber" />
       <Form onSubmit={handleSubmit} schema={schema}>
-        <Input name="name" type="text" placeholder="Your beautiful full name" />
-        <Input name="email" type="email" placeholder="Your cool email" />
+        <Input name="name" type="text" placeholder="Seu lindo nome completo" />
+        <Input name="email" type="email" placeholder="Seu e-mail massa" />
         <Input
           name="password"
           type="password"
-          placeholder="Your totally complex password"
+          placeholder="Sua senha totalmente complexa"
         />
-        <button type="submit">Create my awesome account</button>
-        <Link to="/">I already have a nice account</Link>
+        <button type="submit">Criar minha conta incrível</button>
+        <Link to="/">Eu já tenho uma conta maneira</Link>
       </Form>
     </>
   );

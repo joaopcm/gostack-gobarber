@@ -10,9 +10,9 @@ import { signInRequest } from '~/store/modules/auth/actions';
 
 const schema = Yup.object().shape({
   email: Yup.string()
-    .email('Insert a valid email address')
-    .required('Email is required'),
-  password: Yup.string().required('Password is required'),
+    .email('Insira um endereço de e-mail válido')
+    .required('E-mail é obrigatório'),
+  password: Yup.string().required('Senha é obrigatória'),
 });
 
 export default function SignIn() {
@@ -27,14 +27,14 @@ export default function SignIn() {
     <>
       <img src={logo} alt="GoBarber" />
       <Form onSubmit={handleSubmit} schema={schema}>
-        <Input name="email" type="email" placeholder="Your cool email" />
+        <Input name="email" type="email" placeholder="Seu e-mail massa" />
         <Input
           name="password"
           type="password"
-          placeholder="Your totally complex password"
+          placeholder="Sua senha totalmente complexa"
         />
-        <button type="submit">{loading ? 'Loading...' : 'Launch'}</button>
-        <Link to="/register">Create my super account for free</Link>
+        <button type="submit">{loading ? 'Carregando...' : 'Entrar'}</button>
+        <Link to="/register">Criar minha super conta de graça</Link>
       </Form>
     </>
   );

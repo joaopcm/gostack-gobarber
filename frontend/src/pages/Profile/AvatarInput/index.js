@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useField } from '@rocketseat/unform';
 import api from '~/services/api';
 
 import { Container } from './styles';
 
 export default function Profile() {
+  const profile = useSelector(state => state.user.profile);
+
   const { defaultValue, registerField } = useField('avatar');
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
@@ -40,9 +43,10 @@ export default function Profile() {
       <label htmlFor="avatar">
         <img
           src={
-            preview || 'https://api.adorable.io/avatars/285/abott@adorable.png'
+            preview ||
+            `https://api.adorable.io/avatars/285/${profile.email}.png`
           }
-          alt="User"
+          alt={`Foto de perfil de ${profile.name}`}
         />
 
         <input

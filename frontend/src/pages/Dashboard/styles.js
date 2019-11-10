@@ -34,20 +34,32 @@ export const Container = styled.div`
 
 export const Time = styled.li`
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 4px;
   background: ${colors.white};
   opacity: ${props => (props.past ? 0.6 : 1)};
 
-  strong {
-    display: block;
-    color: ${props => (props.available ? colors.grey : colors.primary)};
-    font-size: 20px;
-    font-weight: normal;
+  div {
+    strong {
+      display: block;
+      color: ${props => (props.available ? colors.grey : colors.primary)};
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    span {
+      display: block;
+      margin-top: 3px;
+      color: ${colors.grey};
+    }
   }
 
-  span {
-    display: block;
-    margin-top: 3px;
-    color: ${colors.grey};
+  img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 2px solid ${colors.primary};
   }
 `;
