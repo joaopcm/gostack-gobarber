@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
-import { BaseButton } from 'react-native-gesture-handler';
+import { RectButton } from 'react-native-gesture-handler';
 
 import colors from '~/styles/colors';
 
-export const Container = styled(BaseButton)`
+export const Container = styled(RectButton)`
   height: 46px;
   background: ${colors.primary};
   border-radius: 4px;
