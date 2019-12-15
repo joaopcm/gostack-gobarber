@@ -1,4 +1,5 @@
 import { Alert } from 'react-native';
+import DropdownAlert from 'react-native-dropdownalert';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import api from '~/services/api';
 import { signFailure, signInSuccess } from './actions';
@@ -29,10 +30,11 @@ export function* signIn({ payload }) {
     // history.push('/dashboard');
     return;
   } catch (error) {
-    Alert.alert(
-      'Falha na autenticação',
-      'Houve um erro no login, verifique seus dados'
-    );
+    DropdownAlert.alertWithType('error', 'Error', 'error.message');
+    // Alert.alert(
+    //   'Falha na autenticação',
+    //   'Houve um erro no login, verifique seus dados!!'
+    // );
     yield put(signFailure());
   }
 }
@@ -45,7 +47,6 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
 
     Alert.alert(
